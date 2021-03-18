@@ -1,11 +1,5 @@
--- xmonad.hs
--- xmonad example config file.
---
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
---
--- Normally, you'd only override those defaults you care about.
---
+
+-- My Haskell Config File
 
 import XMonad
 import Data.Monoid
@@ -17,9 +11,8 @@ import XMonad.Hooks.DynamicLog
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
--- The preferred terminal program, which is used in a binding below and by
--- certain contrib modules.
---
+-- My Terminal Of Choice, Replace it with yours!
+
 myTerminal      = "kitty"
 
 -- Whether focus follows the mouse pointer.
@@ -41,19 +34,12 @@ myBorderWidth   = 3
 --
 myModMask       = mod4Mask
 
--- The default number of workspaces (virtual screens) and their names.
--- By default we use numeric strings, but any string may be used as a
--- workspace name. The number of workspaces is determined by the length
--- of this list.
---
--- A tagging example:
---
--- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
---
+
+-- Workspaces to be used
 myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
---
+
 myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff00ff"
 
@@ -75,6 +61,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+
+    -- launch google-chrome-stable
+    -- , ((modm .|. ))
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
